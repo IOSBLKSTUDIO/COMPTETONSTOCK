@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #0a0a0f;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0f 0%, #12121a 100%);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #12121a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f1f2e;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2f2f4e;
+}
+
+/* Glowing effects */
+.glow-green {
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+
+.glow-red {
+  box-shadow: 0 0 20px rgba(255, 68, 68, 0.3);
+}
+
+.glow-blue {
+  box-shadow: 0 0 20px rgba(0, 136, 255, 0.3);
+}
+
+/* Price change animations */
+.price-up {
+  animation: flash-green 0.5s ease-out;
+}
+
+.price-down {
+  animation: flash-red 0.5s ease-out;
+}
+
+@keyframes flash-green {
+  0% { background-color: rgba(0, 255, 136, 0.3); }
+  100% { background-color: transparent; }
+}
+
+@keyframes flash-red {
+  0% { background-color: rgba(255, 68, 68, 0.3); }
+  100% { background-color: transparent; }
+}
+
+/* Transaction list animation */
+.transaction-enter {
+  animation: slide-in 0.3s ease-out;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Code typing effect */
+.typing-cursor::after {
+  content: '|';
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Card hover effects */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
